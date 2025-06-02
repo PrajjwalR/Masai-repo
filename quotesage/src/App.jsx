@@ -3,7 +3,7 @@ import axios from 'axios';
 import QuoteCard from './components/QuoteCard';
 import QuoteButton from './components/QuoteButton';
 import ThemeToggle from './components/ThemeToggle';
-import '/Users/Prajjwal/masai-repo/quotesage/src/App.css'
+import './App.css';
 
 export default function App() {
   const [quoteData, setQuoteData] = useState({ q: '', a: '' });
@@ -26,10 +26,10 @@ export default function App() {
   const toggleTheme = () => setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
 
   return (
-    <div className={`min-h-screen p-6 ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-black'}`}>
+    <div className={`app ${theme}`}>
       <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
 
-      <div className="max-w-xl mx-auto text-center mt-20">
+      <div className="quote-container">
         <QuoteCard 
           quote={quoteData.q} 
           author={quoteData.a} 
@@ -39,12 +39,12 @@ export default function App() {
 
         <QuoteButton onClick={fetchQuote}>New Quote</QuoteButton>
 
-        <div className="mt-4">
-          <label className="mr-2 font-semibold">Font Size:</label>
+        <div className="font-selector">
+          <label className="font-label">Font Size:</label>
           <select 
             value={fontSize} 
             onChange={(e) => setFontSize(e.target.value)}
-            className="border p-1 rounded"
+            className="font-select"
           >
             <option value="sm">Small</option>
             <option value="base">Medium</option>
@@ -55,4 +55,4 @@ export default function App() {
       </div>
     </div>
   );
-}
+} 

@@ -23,19 +23,23 @@ body {
   color: #fff;
 }
 
+.quote-container {
+  max-width: 600px;
+  text-align: center;
+  margin-top: 5rem;
+}
+
 .quote-card {
   border-radius: 10px;
   padding: 1.5rem 2rem;
   background-color: inherit;
   border: 2px solid currentColor;
-  max-width: 600px;
   text-align: center;
   margin-bottom: 1rem;
   transition: all 0.3s ease;
 }
 
 .quote-text {
-  font-size: var(--font-size, 1.2rem);
   font-style: italic;
   margin-bottom: 1rem;
 }
@@ -60,7 +64,7 @@ body {
 .button:hover {
   background-color: #005dc1;
 }
-  
+
 .like-button {
   background: none;
   border: none;
@@ -74,11 +78,31 @@ body {
   transform: scale(1.2);
 }
 
+.font-selector {
+  margin-top: 1rem;
+}
+
+.font-label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
 .font-select {
-  margin: 1rem;
   padding: 0.4rem;
   font-size: 1rem;
   border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
